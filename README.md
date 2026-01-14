@@ -43,3 +43,22 @@ model.fit(X_train, y_train)
 
 Le modèle apprend la relation entre X et y pour pouvoir prédire de nouvelles valeurs.
 
+## 4️⃣ Prédiction
+
+Pour prédire la valeur de y pour une nouvelle entrée x, nous utilisons une fonction predict
+
+## 🔢 Formule utilisée
+
+                                y=a⋅x+b
+## 📦 Dépendances principales
+
+  + fastapi
+
+  + uvicorn
+
+  + numpy
+
+  + scikit-learn
+
+  + jinja2
+
