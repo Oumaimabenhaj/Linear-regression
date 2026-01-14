@@ -28,3 +28,18 @@ La variable X représente les entrées (valeurs que l’utilisateur peut saisir)
 Les données sont générées de manière à illustrer une relation linéaire simple
 
 Chaque élément de X est une liste car scikit-learn attend un tableau 2D pour les entrées.
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+==> 80 % des données sont utilisées pour l’entraînement et 20 % pour le test.
+
+## 3️⃣ Entraînement du modèle
+
+Nous utilisons le modèle LinearRegression de scikit-learn :
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+Le modèle apprend la relation entre X et y pour pouvoir prédire de nouvelles valeurs.
+
