@@ -63,21 +63,14 @@ Pour prédire la valeur de y pour une nouvelle entrée x, nous utilisons une fon
   + jinja2
 
 ## 🏗️ Architecture du système
-
 Utilisateur
-    │
-    ▼
+    ↓
 Interface Web (Formulaire HTML / Jinja2)
-    │
-    ▼
-FastAPI (Endpoints GET/POST)
-    │
-    ▼
-Modèle LinearRegression (Scikit-learn)
-    │
-    ▼
+    ↓
+FastAPI (Endpoints GET / POST)
+    ↓
+Modèle LinearRegression (scikit-learn)
+    ↓
 Calcul de y_pred
-    │
-    ▼
+    ↓
 Résultat affiché sur l’interface / renvoyé en JSON
-
