@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Regression Prediction</title>
+</head>
+<body>
+    <h1>Linear Regression Predictor</h1>
+
+    <form method="post">
+        <label for="x">Enter a number (x):</label>
+        <input type="number" step="any" name="x" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Prediction Result:</h2>
+        <p>x = {{ x }}</p>
+        <p>y_pred = {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>

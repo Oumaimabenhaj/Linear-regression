@@ -1,16 +1,18 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Form
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from app.model import model, predict
 
 app = FastAPI()
+templates = Jinja2Templates(directory="app/templates")
 
-@app.get("/")
-def root():
-    return {"message": "Linear Regression API"}
+# Endpoint racine → interface HTML
+@app.get("/", response_class=HTMLResponse)
+def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "prediction": None})
 
-@app.get("/predict")
-def predict_endpoint(x: float):
+# Endpoint POST → calculer la prédiction
+@app.post("/", response_class=HTMLResponse)
+def calculate_prediction(request: Request, x: float = Form(...)):
     y_pred = predict(model, x)
-    return {
-        "x": x,
-        "y_pred": y_pred
-    }
+    return templates.TemplateResponse("index.html", {"request": request, "prediction": y_pred, "x": x})
