@@ -12,7 +12,7 @@ Ce projet implémente une **régression linéaire simple** et fournit :
 - Une **API FastAPI** pour obtenir la prédiction en JSON
 - Une **interface web interactive** pour saisir une valeur `x` et afficher `y_pred`
 
-L'objectif est de montrer comment déployer un modèle de machine learning simple et créer une interface utilisateur professionnelle.
+Ce projet permet de prédire la valeur de y à partir d’une variable x en utilisant une régression linéaire simple, et fournit une interface web interactive pour saisir les valeurs et afficher les résultats en temps réel.
 
 
  ## 🧠 Logique générale
@@ -62,15 +62,4 @@ Pour prédire la valeur de y pour une nouvelle entrée x, nous utilisons une fon
 
   + jinja2
 
-## 🏗️ Architecture du système
-Utilisateur
-    ↓
-Interface Web (Formulaire HTML / Jinja2)
-    ↓
-FastAPI (Endpoints GET / POST)
-    ↓
-Modèle LinearRegression (scikit-learn)
-    ↓
-Calcul de y_pred
-    ↓
-Résultat affiché sur l’interface / renvoyé en JSON
+
