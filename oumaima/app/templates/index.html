@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Linear Regression Prediction</title>
+    <title>Linear Regression Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* fond clair */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #004080; /* couleur principale entreprise (exemple bleu Prose) */
+            margin-bottom: 20px;
+        }
+
+        input[type=number] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #ff6600; /* couleur accent Prose */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f2ff; /* léger bleu pour résultat */
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Linear Regression Predictor</h1>
+    <div class="container">
+        <h1>Prédicteur de Régression Linéaire</h1>
 
-    <form method="post">
-        <label for="x">Enter a number (x):</label>
-        <input type="number" step="any" name="x" required>
-        <button type="submit">Predict</button>
-    </form>
+        <form method="post">
+            <input type="number" step="any" name="x" placeholder="Entrez un nombre" required>
+            <br>
+            <button type="submit">Prédire</button>
+        </form>
 
-    {% if prediction is not none %}
-        <h2>Prediction Result:</h2>
-        <p>x = {{ x }}</p>
-        <p>y_pred = {{ prediction }}</p>
-    {% endif %}
+        {% if prediction is not none %}
+            <div class="result">
+                <p><strong>x :</strong> {{ x }}</p>
+                <p><strong>y prédit :</strong> {{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
 </body>
 </html>
